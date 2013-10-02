@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   	if @user.update_attributes(user_params)
   		redirect_to user_path
   	else
-  		render "edit"
+  		render "edit", :alert => "you have an error"
   	end
   end
 
@@ -43,6 +43,4 @@ class UsersController < ApplicationController
   	params.require(:user).permit(:first_name, :last_name, 
   		:email, :password, :password_confirmation)
   end
-
-
 end
