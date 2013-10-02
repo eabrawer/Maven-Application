@@ -1,20 +1,35 @@
 <%= form_for @user do |form| %>
+	<% if @user.errors.any? %>
+		<%= pluralize(@user.errors.count, "error") %>
+		prohibited this from being saved
+		<ul>
+		<% @user.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+		</ul>
+	<% end %>
 
-	<%= form.label :first_name %><br>
-	<%= form.text_field :first_name %><br>
-
-	<%= form.label :last_name %><br>
-	<%= form.text_field :last_name %><br>
-
-	<%= form.label :email %><br>
-	<%= form.text_field :email %><br>
-
-	<%= form.label :password %><br>
-	<%= form.password_field :password %><br>
-
-	<%= form.label :password_confirmation %><br>
-	<%= form.password_field :password_confirmation %><br>
-
+	<div class="field">
+		<%= form.label :first_name %><br />
+		<%= form.text_field :first_name %><br />
+	<end>
+	<div class="field">
+		<%= form.label :last_name %>
+		<%= form.text_field :last_name %>
+	<end>
+	<div class="field">
+		<%= form.label :email %>
+		<%= form.text_field :email %>
+	<end>	
+	<div class="field">
+		<%= form.label :password %>
+		<%= form.password_field :password %>
+	<end>	
+	<div class="field">
+		<%= form.label :password_confirmation %><br />
+		<%= form.password_field :password_confirmation %>
+	<end>
+<br />
 	<%= form.submit "save" %>
 <% end %>
 
