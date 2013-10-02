@@ -1,2 +1,7 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1><%= @user.first_name + " #{@user.last_name}" %></h1>
+<p><%= @user.email %></p>
+
+
+<%= link_to "Edit User", edit_user_path %><br />
+<%= link_to "Delete User", @product, :confirm => "Are you sure you want to delete this picture?", :method => :delete %><br />
+<%= link_to "Back", users_url %>

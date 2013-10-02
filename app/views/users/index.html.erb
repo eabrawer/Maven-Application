@@ -1,0 +1,7 @@
+<h1>User Index</h1>
+
+<% @users.each do |user| %>
+	<%= link_to user.first_name, user %><br />
+<% end %>
+
+<%= link_to "Create User", new_user_path %><br />
