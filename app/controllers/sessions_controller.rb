@@ -5,8 +5,8 @@ class SessionsController < ApplicationController
   def create
   	user = User.find_by_email(params[:email])
   	if user && user.authenticate(params[:password])
-  		sessions[:user_id] = user.id
-  		redirect_to @product, :notice => "You are loged in"
+  		session[:user_id] = user.id
+  		redirect_to @project, :notice => "You are loged in"
   	else
   		flash.now[:alert] = "You are not logged in"
   		render "new"
