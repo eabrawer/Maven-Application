@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   
   def index
-  	@project = Project.all
+  	@projects = Project.all
   end
 
   def show
@@ -20,8 +20,6 @@ class ProjectsController < ApplicationController
   		render "edit"
   	end
   end 
-  	
-  end
 
   def new
   	@project = Project.new
@@ -30,7 +28,7 @@ class ProjectsController < ApplicationController
   def create
   	@project = Project.new(project_params)
   	if @project.save
-  		redirect_to new_project_path
+  		redirect_to @project
   	else
   		render "new"
   	end
