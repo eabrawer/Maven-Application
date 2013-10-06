@@ -1,6 +1,28 @@
 <h1>User Creation</h1>
-
-
-<%= render :partial => "form" %>
-
-<%= link_to "Back", users_url %>
+<%= render :partial => "error" %>
+<%= form_for @user do |form| %>
+	<div class="field">
+		<%= form.label :first_name %><br />
+		<%= form.text_field :first_name %><br />
+	</div>
+	<div class="field">
+		<%= form.label :last_name %><br />
+		<%= form.text_field :last_name %>
+	</div>
+	<div class="field">
+		<%= form.label :email %><br />
+		<%= form.text_field :email %>
+	</div>	
+	<div class="field">
+		<%= form.label :password %><br />
+		<%= form.password_field :password %>
+	</div>	
+	<div class="field">
+		<%= form.label :password_confirmation %><br />
+		<%= form.password_field :password_confirmation %>
+	</div>
+	<div class="field">
+		<%= form.submit "save" %>
+	</div>
+<% end %>
+<%= link_to "Essays", users_url %>
