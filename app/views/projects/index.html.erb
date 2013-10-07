@@ -1,9 +1,12 @@
-<h1>Projects index</h1>
+<% if params[:user_id] then %>
+	<h1><%= current_user.first_name + " #{current_user.last_name}" + "'s Project List" %></h1>
+<% else %>
+	<h1> Project Index </h1>
+<% end %>
 
 <% @projects.each do |project| %>
   <%= link_to project.title, project %><br />
 <% end %>
 <br />
-
 
 
