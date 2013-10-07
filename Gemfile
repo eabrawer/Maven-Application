@@ -7,13 +7,13 @@ gem 'rails', '4.0.0'
 gem 'sqlite3'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+# gem 'sass-rails', '~> 4.0.0'
 
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+# gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+# gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -34,7 +34,7 @@ end
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
-gem 'better_errors'
+# gem 'better_errors'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -44,3 +44,26 @@ gem 'better_errors'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'sorcery'
+gem 'cancan'
+
+group :development do
+	gem 'rspec-rails', '~> 2.0' # using rspec instead of test unit
+  gem 'better_errors' # makes the errors we see in the browser more descriptive
+  gem "binding_of_caller"
+  gem 'pry-rails'	
+end
+
+group :assets do
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'bootstrap-sass', '~> 2.2.2.0'
+  gem 'uglifier', '>= 1.0.3'
+end
+
+group :test do 
+  gem 'rspec-rails', '~> 2.0' # using rspec instead of test unit
+  gem "factory_girl_rails" 
+  gem "capybara" # needed for our integration tests, which we'll talk about more later
+end
