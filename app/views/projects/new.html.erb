@@ -1,17 +1,17 @@
 <h1>Create a New Project</h1>
 
-<%= form_for @project do |p| %>
+<%= form_for ([@user, @project]) do |p| %>
   <div class="field">
-    <%= p.label :title  %><br />
-    <%= p.text_field :title  %>
+    <%= p.label :title %><br />
+    <%= p.text_field :title %>
   </div>
   <br />
   <div class="field">
-    <%= p.label :essay  %><br />
-    <%= p.text_area :essay  %>
+    <%= p.label :essay %><br />
+    <%= p.text_area :essay %>
   </div>  
 
-  <%= p.submit "save"  %>
+  <%= p.submit "save" %>
 <% end %>
 
 <%= link_to "back to projects", projects_url %>

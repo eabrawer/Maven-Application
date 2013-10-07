@@ -7,12 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if current_user %>
-        Signed in as <%= current_user.email %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
-    <% else %>
-        <%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
-    <% end %>
-	
+  <div id="container">
+    <div id="nav"> 
+      <h1 id="title"> Maven </h1>
+      <ul>
+      <li><%= link_to "Projects", projects_url %></li>
+      
+        <% if current_user %>
+            <li>Signed in as <%= current_user.email %> <%= link_to "Log out", session_path("current"), :method => :delete %></li>
+        <% else %>
+            <li><%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %></li>
+        <% end %>
+      </ul>
+    </div>
+
+  <div style="clear:both;"></div>
     <% if flash[:notice] %>
     	 <p><%= flash[:notice] %></p>
     <% end %>
@@ -22,7 +31,7 @@
     <% end %>
 
 <%= yield %>
-
-
+  <%= debug params %>
+ </div>
 </body>
 </html>

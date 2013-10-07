@@ -1,7 +1,11 @@
 class ProjectsController < ApplicationController
   
   def index
-  	@projects = Project.all
+    if params[:user_id]
+      @projects = current_user.projects
+    else
+  	  @projects = Project.all
+    end
   end
 
   def show
@@ -26,7 +30,8 @@ class ProjectsController < ApplicationController
   end
 
   def create
-  	@project = Project.new(project_params)
+  	@project = current_user.projects.build(project_params)
+    @project.user_id = current_user.id
   	if @project.save
   		redirect_to @project
   	else
@@ -35,8 +40,8 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-  	@project = Project.find(params [:id])
-  	@project = Project.destroy
+  	@project = Project.find(params[:id])
+  	@project.destroy
   	redirect_to projects_url
   end
 
