@@ -1,6 +1,6 @@
 <h1><%= @user.first_name + " #{@user.last_name}" %></h1>
 <p><%= @user.email %></p>
-<img src="<%= @user[:picture] %>">
+<img src=<%= @user.avatar %>>
 
 <%= link_to "Edit Profile", edit_user_path %>
 

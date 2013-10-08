@@ -1,6 +1,6 @@
 <h1>User Creation</h1>
 <%= render :partial => "error" %>
-<%= form_for @user do |form| %>
+<%= form_for @user, :html => {:multipart => true} do |form| %>
 	<div class="field">
 		<%= form.label :first_name %><br />
 		<%= form.text_field :first_name %><br />
@@ -13,9 +13,9 @@
 		<%= form.label :email %><br />
 		<%= form.text_field :email %>
 	</div>	
+	<br />
 	<div class="field">
-		<%= form.label :picture %><br />
-		<%= form.text_field :picture %>
+		<%= form.file_field :avatar %>
 	</div>	
 	<div class="field">
 		<%= form.label :password %><br />

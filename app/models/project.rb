@@ -5,4 +5,5 @@ class Project < ActiveRecord::Base
 				minimum: 100
 			}
 	belongs_to :user
+	mount_uploader :avatar, ProjectAvatarUploader
 end
