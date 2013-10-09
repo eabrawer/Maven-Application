@@ -3,6 +3,8 @@
 <%= form_for @project do |p| %>
   <%= p.label :title  %>
   <%= p.text_field :title  %>
-
+	<div class="field">
+		<%= p.file_field :avatar %>
+	</div>	
   <%= p.submit "edit" %>
 <% end %>

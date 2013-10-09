@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-	attr_accessible :title, :essay
+	attr_accessible :title, :essay, :avatar
 	validates :title, presence: true
 	validates :essay, presence: true, length: { 
 				minimum: 100

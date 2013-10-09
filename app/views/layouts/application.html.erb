@@ -9,9 +9,10 @@
 <body>
   <div id="container">
     <div id="nav"> 
-      <h1 id="title"> Maven </h1>
       <ul>
+      <li id="title"> Maven </li>
       <li><%= link_to "Projects", projects_url %></li>
+
         <% if current_user %>
             <li><%= link_to "Your Projects", user_projects_path(current_user) %></li>
             <li><%= link_to "Your Profile", user_path(current_user) %></li>
