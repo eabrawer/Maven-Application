@@ -1,6 +1,7 @@
 <h1>Create a New Project</h1>
 
-<%= form_for [@user, @project], :html => {:multipart => true} do |p| %>
+
+<%= form_for @project, :html => {:multipart => true} do |p| %>
   <div class="field">
     <%= p.label :title %><br />
     <%= p.text_field :title %>

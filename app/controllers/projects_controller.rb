@@ -10,6 +10,10 @@ class ProjectsController < ApplicationController
 
   def show
   	@project = Project.find(params[:id])
+    if current_user
+      @user = current_user
+      @comment = @project.comments.build
+    end
   end
 
   def edit
@@ -17,12 +21,18 @@ class ProjectsController < ApplicationController
   end
 
   def update
+
   	@project = Project.find(params[:id])
-  	if @project.update_attributes(project_params)
-  		redirect_to project_path
-  	else 
-  		render "edit"
-  	end
+
+    if current_user != @project.user
+      redirect_to "bugger_off", :error => "that project does not belong to you, go away!!!!"
+    else
+      if @project.update_attributes(project_params)
+        redirect_to project_path
+      else 
+        render "edit"
+      end  
+    end
   end 
 
   def new
