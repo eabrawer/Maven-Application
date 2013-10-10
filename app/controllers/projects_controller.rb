@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   
   def index
-    if params[:user_id]
+    if current_user
       @projects = current_user.projects
     else
   	  @projects = Project.all
