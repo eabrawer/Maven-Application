@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131010154306) do
+ActiveRecord::Schema.define(:version => 20131011194016) do
 
   create_table "comments", :force => true do |t|
     t.text     "text"
@@ -75,14 +75,19 @@ ActiveRecord::Schema.define(:version => 20131010154306) do
   add_index "rs_reputations", ["target_id", "target_type"], :name => "index_rs_reputations_on_target_id_and_target_type"
 
   create_table "users", :force => true do |t|
+    t.string   "email",                        :null => false
     t.string   "avatar"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.string   "crypted_password"
+    t.string   "salt"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+    t.string   "remember_me_token"
+    t.datetime "remember_me_token_expires_at"
   end
+
+  add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"
 
   create_table "votes", :force => true do |t|
     t.integer  "votable_id"

@@ -190,7 +190,6 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord-reputation-system
-  bcrypt-ruby (~> 3.0.0)
   better_errors
   binding_of_caller
   bootstrap-sass (~> 2.2.2.0)
