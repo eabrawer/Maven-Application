@@ -2,6 +2,15 @@
 
 
 <%= form_for @project, :html => {:multipart => true} do |p| %>
+    <% if @project.errors.any? %>
+       <%= pluralize(@project.errors.count, "error") %> prohibited this review from being saved:
+        <ul>
+        <% @project.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+    <% end %>
+
   <div class="field">
     <%= p.label :title %><br />
     <%= p.text_field :title %>
