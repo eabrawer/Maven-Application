@@ -3,11 +3,19 @@
 
 <p><%= @project.essay %></p>
 
+
       <% if @project.user != nil %>
         <em> by <%= @project.user.email %></em>
         Added on: <%= @project.created_at %>
       <% end %>
       <br />
+
+<%= pluralize @project.reputation_for(:votes).to_i, "votes" %>
+<%= link_to "up", vote_project_path(@project, type: "up"), method: "post" %>
+<%= link_to "down", vote_project_path(@project, type: "down"), method: "post" %>
+<br />
+<br />
+
 
 <% @project.comments.each do |comment| %>
 	<% unless comment.new_record? %>

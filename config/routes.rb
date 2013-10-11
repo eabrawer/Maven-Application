@@ -5,6 +5,7 @@ Letsmeet::Application.routes.draw do
   resources :users
 
   resources :projects do
+  	member { post :vote }
 	resources :comments, :only => [:create, :destroy, :new] do
 		member { post :vote }
 	end

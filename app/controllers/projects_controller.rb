@@ -59,4 +59,13 @@ class ProjectsController < ApplicationController
   	params.require(:project).permit(:user, :essay, :title, :avatar)
   end
 
+  def vote
+    value = params[:type] == "up" ? 10 : -10
+    @project = Project.find(params[:id])
+    @project.add_or_update_evaluation(:votes, value, current_user)
+    redirect_to :back, :notice => "Thank you for voting!"
+  end
+
+
+
 end
