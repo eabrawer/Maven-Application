@@ -3,6 +3,7 @@ class ProjectsController < ApplicationController
   def index
     if current_user
       @projects = current_user.projects
+      @projects = Project.find_with_reputation(:votes, :all, :order => "votes desc")
     else
   	  @projects = Project.all
     end
@@ -60,7 +61,7 @@ class ProjectsController < ApplicationController
   end
 
   def vote
-    value = params[:type] == "up" ? 10 : -10
+    value = params[:type] == "up" ? 1 : -1
     @project = Project.find(params[:id])
     @project.add_or_update_evaluation(:votes, value, current_user)
     redirect_to :back, :notice => "Thank you for voting!"

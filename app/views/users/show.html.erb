@@ -2,6 +2,10 @@
 
 <img src=<%= @user.avatar_url(:thumb) %>>
 <br />
+<% if current_user %>
+	(Number of votes: <%= current_user.reputation_for(:votes).to_i %>)
+<% end %>
+<br />
 <%= link_to "Edit Profile", edit_user_path %>
 
 
