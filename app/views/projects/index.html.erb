@@ -4,6 +4,7 @@
 	<% @projects.each do |project| %>
   		<%= link_to project.title, project %><br />
 	<% end %>
+
 <% else %>
 	<h1> Project Index </h1>
 	<% @projects.each do |project| %>
@@ -11,6 +12,9 @@
   		<%= link_to project.title, project %>
 	<% end %>
 <% end %>
+
+<%= will_paginate @projects %>
+
 
 
 
