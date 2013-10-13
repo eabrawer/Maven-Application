@@ -1,12 +1,36 @@
-<h1><%= @user.first_name + " #{@user.last_name}" + "'s Profile" %></h1>
+<div class="buttons"
+	<%= link_to "Edit", edit_user_path %>
+</div>
+<div style="clear:both;"></div>
 
-<img src=<%= @user.avatar_url(:thumb) %>>
-<br />
-<% if current_user %>
-	(Number of votes: <%= current_user.reputation_for(:votes).to_i %>)
-<% end %>
-<br />
-<%= link_to "Edit Profile", edit_user_path %>
 
+<div id="userblock">
+
+	<img class="userpicture" src=<%= @user.avatar_url(:thumb) %>>
+	<br />
+
+	<div class="userinfo">
+		<h1 class="username"><%= @user.first_name + " #{@user.last_name}" + "'s Profile" %></h1>
+		<hr />
+
+		<div class= "reputation">
+			<% if current_user %>
+				<p>REPUTATION</p><h3><%= current_user.reputation_for(:votes).to_i %></h3>
+			<% end %>
+			<br />
+		</div>
+
+		<div class= "essaycount">
+			<p>ESSAYS</p><h3><%= @projects.to_i %>
+		</div>
+	
+  		<div style="clear:both;"></div>
+	</div>
+
+</div>
+
+	<div id="aboutme">
+	
+	</div>
 
 

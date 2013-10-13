@@ -22,6 +22,9 @@ gem 'sqlite3'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+#gem 'kaminari'
+#gem 'kaminari-bootstrap'
+gem 'will_paginate'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'

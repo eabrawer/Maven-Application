@@ -4,13 +4,26 @@
 	<% @projects.each do |project| %>
   		<%= link_to project.title, project %><br />
 	<% end %>
+
 <% else %>
 	<h1> Project Index </h1>
+	
+<div class="projectsonindex">
 	<% @projects.each do |project| %>
-		<img src=<%= project.avatar_url(:thumb) %>><br />
-  		<%= link_to project.title, project %>
+	<ul>
+		<li><img class="imagespace" src=<%= project.avatar_url(:thumb) %>></li>
+  		<li><div class="indexinfo"><%= link_to project.title, project %></div></li>
+  	</ul>
 	<% end %>
+</div>
+
+
+
 <% end %>
+<div id= "paginate">
+<%= will_paginate @projects %>
+</div>
+
 
 
 
