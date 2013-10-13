@@ -130,27 +130,9 @@ time, mark, audio, video {
 	text-align: center;
 }
 
-.imagespace {
-	display: inline-block;
-	padding-left: 30px;
-	float: left;
-	clear: both;
-	padding: 10px;
-	margin: 10px;
-	width: 200px;
-	height: 160px;
-	background-color: #313233;
 
-}
 
-.indexinfo {
-/*	bottom: 200px;*/
-/*	clear: both;*/
-	color: transparent;
-	float: left;
-	padding-left: 10px;
-	position: relative;
-}
+
 
 
 
