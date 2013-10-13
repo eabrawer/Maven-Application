@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
   def update
   	@user = User.find(params[:id])
-  	if @user.update_attributes(user_params)
+  	if @user.update_attributes(params[:user])
   		redirect_to user_path :notice => "User was successfully updated."
   	else
       flash.now[:alert] = "User was not updated"
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   end
 
   def create
-  	@user = User.new(user_params)
+  	@user = User.new(params[:user])
   	if @user.save
       auto_login(@user)
   		redirect_to @user, :notice => "User was successfully created."
@@ -44,8 +44,8 @@ class UsersController < ApplicationController
   		redirect_to new_user_path
   end
 
-  def user_params
-  	params.require(:user).permit(:first_name, :last_name, 
-  		:email, :password, :password_confirmation, :avatar, )
-  end
+  # def user_params
+  # 	params.require(:user).permit(:first_name, :last_name, 
+  # 		:email, :password, :password_confirmation, :avatar, )
+  # end
 end

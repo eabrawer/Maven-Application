@@ -50,7 +50,7 @@ gem 'carrierwave'
 gem 'rmagick', '~> 2.13.1'
 gem 'sorcery'
 gem 'cancan'
-gem 'strong_parameters'
+# gem 'strong_parameters'
 
 group :development do
 	gem 'rspec-rails'#, '~> 2.0' # using rspec instead of test unit

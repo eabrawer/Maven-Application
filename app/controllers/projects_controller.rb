@@ -28,7 +28,7 @@ class ProjectsController < ApplicationController
     if current_user != @project.user
       redirect_to "bugger_off", :error => "that project does not belong to you, go away!!!!"
     else
-      if @project.update_attributes(project_params)
+      if @project.update_attributes(params[:project])
         redirect_to project_path
       else 
         render "edit"
@@ -41,7 +41,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-  	@project = current_user.projects.build(project_params)
+  	@project = current_user.projects.build(params[:project])
     @project.user_id = current_user.id
   	if @project.save
   		redirect_to @project
@@ -56,9 +56,9 @@ class ProjectsController < ApplicationController
   	redirect_to projects_url
   end
 
-  def project_params
-  	params.require(:project).permit(:user, :essay, :title, :avatar)
-  end
+  # def project_params
+  # 	params.require(:project).permit(:user, :essay, :title, :avatar)
+  # end
 
   def vote
     value = params[:type] == "up" ? 1 : -1
