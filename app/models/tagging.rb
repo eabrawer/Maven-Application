@@ -1,4 +1,5 @@
 class Tagging < ActiveRecord::Base
-  belongs_to :tag
   attr_accessible :project, :to
+
+  belongs_to :tag
 end
