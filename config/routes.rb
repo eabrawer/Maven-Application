@@ -16,7 +16,7 @@ Letsmeet::Application.routes.draw do
   end
 
 
-
-root :to => "projects#index"
+get 'tags/:tag', to: 'projects#index', as: :tag
+root :to => 'projects#index'
 
 end
