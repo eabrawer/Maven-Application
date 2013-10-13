@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   
   def index
     if current_user
-      @projects = current_user.projects.paginate(:page => params[:page], :per_page => 2)
+      @projects = Project.paginate(:page => params[:page], :per_page => 2)
       .find_with_reputation(:votes, :all, :order => "votes desc")
     else
   	  @projects = Project.scoped.order('projects.created_at DESC').page(params[:page])
