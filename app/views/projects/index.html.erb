@@ -1,4 +1,3 @@
-
 <% if params[:user_id] then %>
 	<h1><%= current_user.first_name + " #{current_user.last_name}" + "'s Project List" %></h1>
 	<% @projects.each do |project| %>
@@ -13,6 +12,7 @@
 	<ul>
 		<li><img class="imagespace" src=<%= project.avatar_url(:thumb) %>></li>
   		<li><div class="indexinfo"><%= link_to project.title, project %></div></li>
+  		<li>Tags: <%= raw project.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></li>
   	</ul>
 	<% end %>
 </div>
@@ -24,7 +24,12 @@
 <%= will_paginate @projects %>
 </div>
 
-
+<div id="tag_cloud">
+	<h2>Tags</h2>
+  <% tag_cloud Project.tag_counts, %w[s m l] do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+  <% end %>
+</div>
 
 
 
