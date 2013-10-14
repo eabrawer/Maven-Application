@@ -1,5 +1,9 @@
 class ProjectsController < ApplicationController
-  
+  before_filter :require_login, except: [:index, :show]
+
+
+
+
   def index
     if current_user
       @projects = Project.paginate(:page => params[:page], :per_page => 2)
@@ -22,17 +26,14 @@ class ProjectsController < ApplicationController
   end
 
   def update
-
   	@project = Project.find(params[:id])
 
     if current_user != @project.user
-      redirect_to "bugger_off", :error => "that project does not belong to you, go away!!!!"
-    else
-      if @project.update_attributes(params[:project])
+      redirect_to @project, :error => "that project does not belong to you, go away!!!!"
+    elsif @project.update_attributes(params[:project])
         redirect_to project_path
-      else 
-        render "edit"
-      end  
+    else 
+        render "edit" 
     end
   end 
 
@@ -52,7 +53,9 @@ class ProjectsController < ApplicationController
 
   def destroy
   	@project = Project.find(params[:id])
-  	@project.destroy
+    if @project = current_user.projects.find(params[:id]) then
+  	  @project.destroy
+    end
   	redirect_to projects_url
   end
 
@@ -64,7 +67,7 @@ class ProjectsController < ApplicationController
     value = params[:type] == "up" ? 1 : -1
     @project = Project.find(params[:id])
     @project.add_or_update_evaluation(:votes, value, current_user)
-    redirect_to :back, :notice => "Thank you for voting!"
+    redirect_back_or_to :notice => "Thank you for voting!"
   end
 
 end
