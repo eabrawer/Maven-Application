@@ -2,7 +2,7 @@ class CreateTaggings < ActiveRecord::Migration
   def change
     create_table :taggings do |t|
       t.belongs_to :tag
-      t.belongs :project
+      t.belongs_to :project
       t.string :to
 
       t.timestamps
