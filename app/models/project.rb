@@ -13,6 +13,8 @@ class Project < ActiveRecord::Base
 	has_many :comments
 	has_many :taggings
 	has_many :tags, through: :taggings
+	has_many :project_users # This refers to users that can edit a user's project
+	has_many :authorized_users, :through => :project_users, :source => :user
 
 	def self.tagged_with(name)
   	Tag.find_by_name!(name).projects
