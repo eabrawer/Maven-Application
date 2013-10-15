@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   validates :password, confirmation: true
   
   has_many :projects
+  has_many :project_users
   has_many :comments
   mount_uploader :avatar, UserAvatarUploader
   has_reputation :votes, :source => {:reputation => :votes, 

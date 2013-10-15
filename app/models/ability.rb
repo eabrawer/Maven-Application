@@ -5,7 +5,7 @@ class Ability
 
       user ||= User.new # guest user (not logged in)
       can :update, Project do |project|
-      	project.user == user
+      	project.user == user || project.authorized_users.include?(user)
       end
       can :delete, Project do |project|
       	project.user == user
