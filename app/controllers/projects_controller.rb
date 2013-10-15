@@ -1,9 +1,6 @@
 class ProjectsController < ApplicationController
   before_filter :require_login, except: [:index, :show]
 
-
-
-
   def index
     if current_user
       @projects = Project.paginate(:page => params[:page], :per_page => 2)
@@ -23,6 +20,7 @@ class ProjectsController < ApplicationController
 
   def edit
   	@project = current_user.projects.find(params[:id])
+    authorize! if can? :update, @article
   end
 
   def update
@@ -53,6 +51,7 @@ class ProjectsController < ApplicationController
 
   def destroy
   	@project = Project.find(params[:id])
+    authorize! if can? :delete, @article
     if @project = current_user.projects.find(params[:id]) then
   	  @project.destroy
     end
