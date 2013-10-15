@@ -32,4 +32,17 @@ class Project < ActiveRecord::Base
 	    Tag.where(name: n.strip).first_or_create!
 	  end
 	end
+
+	def self.search(search)
+	  if search
+	  	#Tag.find_by_name!(search).projects
+	  	tag = Tag.where("lower(name) = ?", search.downcase).first
+	  	if tag 
+	  		tag.projects
+	  	end
+	    # find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+	  else
+	    redirect_to root_path# find(:all)
+	  end
+	end
 end

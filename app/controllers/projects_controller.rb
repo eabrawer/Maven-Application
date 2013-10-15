@@ -12,6 +12,11 @@ class ProjectsController < ApplicationController
       @projects = Project.paginate(:page => params[:page], :per_page => 10)
       .find_with_reputation(:votes, :all, :order => "votes desc")
     end
+
+    if params[:search]
+      @projects = Project.search(params[:search]).paginate(:page => params[:page], :per_page => 10)
+      .find_with_reputation(:votes, :all, :order => "votes desc")
+    end
   end
 
   def show
