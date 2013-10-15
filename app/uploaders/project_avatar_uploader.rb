@@ -37,7 +37,7 @@ class ProjectAvatarUploader < CarrierWave::Uploader::Base
   end
 
   version :big_thumb do
-    process :resize_to_fill => [1200, 1000]
+    process :resize_to_fill => [600, 500]
   end
 
 
