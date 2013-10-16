@@ -13,3 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function () {
+	$(".adding_authorized_users").tokenInput("users.json", {
+		crossDomain: false
+	});
+});
