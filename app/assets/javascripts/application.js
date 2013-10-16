@@ -12,20 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation/foundation
-//= require foundation/foundation.alerts
-//= require foundation/foundation.cookie
-//= require foundation/foundation.dropdown
-//= require foundation/foundation.forms
-//= require foundation/foundation.section
-//= require foundation/foundation.topbar
-//= require foundation/foundation.placeholder
-//= require foundation/foundation.abide
 //= require "src/jquery.tokeninput"
 //= require_tree .
 
-
-$(function(){ $(document).foundation(); });
 
 $(document).ready(function () {
 	$(".adding_authorized_users").tokenInput("users.json", {
