@@ -21,6 +21,7 @@
 //= require foundation/foundation.topbar
 //= require foundation/foundation.placeholder
 //= require foundation/foundation.abide
+//= require "src/jquery.tokeninput"
 //= require_tree .
 
 
