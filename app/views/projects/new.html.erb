@@ -1,6 +1,6 @@
-<div class="form">
+<div class="center">
   
-  <h1>Create a New Project</h1>
+  <h3>New Project</h3>
 
 
   <%= form_for @project, :html => {:multipart => true} do |p| %>
@@ -14,21 +14,20 @@
       <% end %>
 
     <div class="field">
-      <%= p.label :title %><br />
+      <%= p.label :title %>
       <%= p.text_field :title %>
     </div>
     <div class="field">
-      <%= p.label "Upload Picture" %><br />
+      <%= p.label "Upload Picture" %>
       <%= p.file_field :avatar %>
     </div>
     <br />
     <div class="field">
-      <%= p.label :essay %><br />
+      <%= p.label :essay %>
       <%= p.text_area :essay %>
     </div> 
     <div class="field">
       <%= p.label :tag_list, "Tags (separated by commas)" %>
-      <br />
       <%= p.text_field :tag_list %>
     </div> 
 

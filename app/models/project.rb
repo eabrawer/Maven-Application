@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-	attr_accessible :title, :essay, :avatar, :tag_list
+	attr_accessible :title, :essay, :avatar, :tag_list, :authorized_users_attributes
 	
 	validates :title, presence: true
 	validates :essay, presence: true, length: { 
@@ -15,6 +15,7 @@ class Project < ActiveRecord::Base
 	has_many :tags, through: :taggings
 	has_many :project_users # This refers to users that can edit a user's project
 	has_many :authorized_users, :through => :project_users, :source => :user
+	accepts_nested_attributes_for :authorized_users
 
 	def self.tagged_with(name)
   	Tag.find_by_name!(name).projects

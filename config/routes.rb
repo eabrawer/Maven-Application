@@ -1,8 +1,12 @@
 Letsmeet::Application.routes.draw do
 
 
+  get "project_user/create"
+
   resources :sessions, :only => [:new, :create, :destroy]
-  resources :users, :except => [:index]
+  resources :users
+  # , :except => [:index]
+  resources :project_users, :only => [:create, :destroy]
 
   resources :projects do
   	member { post :vote }

@@ -33,7 +33,7 @@ class ProjectsController < ApplicationController
   	@project = Project.find(params[:id])
 
     if current_user != @project.user
-      redirect_to @project, :error => "that project does not belong to you, go away!!!!"
+      redirect_to @project, :error => "That project does not belong to you"
     elsif @project.update_attributes(params[:project])
         redirect_to project_path
     else 
@@ -64,15 +64,12 @@ class ProjectsController < ApplicationController
   	redirect_to projects_url
   end
 
-  # def project_params
-  # 	params.require(:project).permit(:user, :essay, :title, :avatar)
-  # end
-
   def vote
     value = params[:type] == "up" ? 1 : -1
     @project = Project.find(params[:id])
     @project.add_or_update_evaluation(:votes, value, current_user)
     redirect_back_or_to :notice => "Thank you for voting!"
   end
+
 
 end

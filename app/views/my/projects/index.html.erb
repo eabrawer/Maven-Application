@@ -1,11 +1,14 @@
 
+
+
+
 <% if params[:user_id] then %>
 	<h1><%= current_user.first_name + " #{current_user.last_name}" + "'s Project List" %></h1>
 	<% @projects.each do |project| %>
   		<%= link_to project.title, project %><br />
 	<% end %>
 <% else %>
-	<h1> Project Index </h1>
+	<h1> Your Projects </h1>
 	<% @projects.each do |project| %>
 		<img src=<%= project.avatar_url(:thumb) %>><br />
   		<%= link_to project.title, project %>

@@ -23,4 +23,12 @@
 //= require foundation/foundation.abide
 //= require_tree .
 
+
 $(function(){ $(document).foundation(); });
+
+$(document).ready(function () {
+	$(".adding_authorized_users").tokenInput("users.json", {
+		crossDomain: false
+	});
+});
+
