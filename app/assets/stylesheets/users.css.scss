@@ -1,3 +1,83 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.center {
+	width: 100%;
+	height: auto;
+	border: 1px solid #bbb;
+}
+
+.center h3 {
+    width: 200px;
+    margin: 0 auto;
+}
+
+.field {
+    width: 200px;
+    margin: 0 auto;
+}
+
+
+
+
+#userblock {
+	width: 213px;
+	height: 600px;
+	background-color: #F8F8F8;
+	margin: 0 50px 50px 50px;
+	padding: 0 20px 20px 20px;
+	border: 1px solid rgba(0,0,0,0.25);
+	border-radius: 0 4px 4px 4px;
+	font-family: arial;
+	float: left;
+}
+
+.username {
+	font-size: 18px;
+	font-family: tahoma, sans-serif;
+	letter-spacing: -1px;
+	text-align: center;
+}
+.userpicture {
+	padding: 10px;
+	background-color: white;
+	border: 2px solid rgba(0,0,0,0.25);
+	float: left;
+	margin-bottom: 20px;
+}
+
+
+.info {
+	border: 1px solid black;
+
+}
+
+
+.reputation {
+	float: left;
+	text-align: center;
+	padding: 0 21px 0 21px;
+	text-align: center;
+	background-color: white;
+	border-collapse: 1px;
+	border-left: 1px solid rgba(0,0,0,0.25);
+	border-top: 1px solid rgba(0,0,0,0.25);
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	p {
+	font-size: 10px;
+	color: rgba(0,0,0,0.50);
+	}
+}
+
+.essaycount {
+	float: right;
+	text-align: center;
+	padding: 0 31px 0 30px;
+	background-color: white;
+	border: 1px solid rgba(0,0,0,0.25);
+	p {
+	font-size: 10px;
+	color: rgba(0,0,0,0.50);
+	}
+}

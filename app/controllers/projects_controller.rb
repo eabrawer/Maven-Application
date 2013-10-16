@@ -75,4 +75,5 @@ class ProjectsController < ApplicationController
     redirect_back_or_to :notice => "Thank you for voting!"
   end
 
+
 end

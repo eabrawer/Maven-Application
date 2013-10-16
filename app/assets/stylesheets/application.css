@@ -137,71 +137,7 @@ time, mark, audio, video {
 
 
 
-/* USER PAGE */
 
-#userblock {
-	width: 500px;
-	height: 225px;
-	background-color: #F8F8F8;
-	margin: 0 50px 50px 50px;
-	padding: 20px;
-	border: 1px solid rgba(0,0,0,0.25);
-	border-radius: 0 4px 4px 4px;
-	font-family: arial;
-	float: left;
-}
-
-#aboutme {
-	width: 500px;
-	height: 225px;
-	background-color: #F8F8F8;
-	margin: 0 50px 50px 50px;
-	padding: 20px;
-	border: 1px solid rgba(0,0,0,0.25);
-	border-radius: 0 4px 4px 4px;
-	font-family: arial;
-	float: right;
-}
-
-.username {
-	font-size: 18px;
-	font-family: trebuchet;
-	letter-spacing: -1px;
-	text-align: center;
-}
-.userpicture {
-	padding: 10px;
-	background-color: white;
-	border: 2px solid rgba(0,0,0,0.25);
-	float: left;
-}
-
-.userinfo{
-	float: right;
-	position: relative;
-	top: -18px;
-	padding: 15px;
-	background-color: rgb(216,216,216);
-	width: 200px;
-	height: 195px;
-}
-
-.userinfo p {
-	font-size: 10px;
-}
-
-.reputation {
-	float: left;
-	padding-left: 20px;
-	text-align: center;
-	margin-right: 20px;
-
-}
-
-
-.essaycount {
-	text-align: center;
-}
 
 
 /* BUTTONS */
