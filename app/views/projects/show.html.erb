@@ -39,15 +39,15 @@
 
 <br />
 <h4>Group members</h4>
-<!-- <div class="adding_authorized_users"> -->
+<div class="adding_authorized_users">
 <% if current_user == @project.user %>
 	<%= form_for ProjectUser.new(:project_id => @project.id) do |f| %>
 		<%= f.hidden_field :project_id %>
 		<%= f.collection_select :user_id, User.all, :id, :email %>
-		<%= f.submit "Add"%>
+		<%= f.submit "Add", :class => "button"%>
 	<% end %>
 <% end %>
-<!-- </div> -->
+</div>
 
 
 
