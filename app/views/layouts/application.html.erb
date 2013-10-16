@@ -14,7 +14,7 @@
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  	<title><%= content_for?(:title) ? yield(:title) : "Maven Application" %></title>
 
   	<%= stylesheet_link_tag    "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
@@ -22,49 +22,7 @@
   </head>
 
   <body>
-    <nav class="top-bar">
-      <ul class="title-area">
-        <li class="name">
-          <h1><%= link_to "Maven", projects_path %></a></h1>
-        </li>
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-      </ul>
-      <section class="top-bar-section">
-        <ul class="left">
-          <li class="divider"></li>
-          <li><%= link_to "Projects", projects_path %></li>
-          <li class="divider"></li>
-          <% if current_user %>
-            <li class="has-dropdown not-click">
-              <a href="#"><%= current_user.email %></a>
-              <ul class="dropdown">
-                <li><%= link_to "Your Projects", my_projects_path %></li>
-                <li><%= link_to "Your Profile", user_path(current_user) %></li>
-                <li><%= link_to "Create an Essay", new_project_path %></li>
-                <!-- <li><%= link_to "Delete User", @product, :confirm => "Are you sure you want to delete this user?", :method => :delete %> </li> -->
-                <li><%= link_to "Log out", session_path("current"), :method => :delete %></li>
-              </ul>
-            </li>
-          <% end %>
-        </ul>
-        <ul class="right">
-          <li class="divider"></li>
-          <li class="has-form">
-            <%= form_tag projects_path, :method => 'get' do %>
-              <div class="row collapse">
-                <div class="small-9 columns">
-                  <%= text_field_tag :search, params[:search] %>
-                </div>
-                <div class="small-3 columns">
-                  <%= submit_tag "Search", :name => nil, :class => "button" %>
-                </div>
-              </div>
-            <% end %>
-          </li>
-          <li class="divider"></li>
-        </ul>
-      </section>
-    </nav>
+    <%= render "shared/nav" %>
 
     <div class="flash">
       <% if flash[:notice] %>
@@ -76,7 +34,12 @@
       <% end %>
     </div>
 
-    <%= yield %>
+    <div class="row">
+      <div class="large-12 columns">
+        <%= yield %>
+      </div>
+    </div>
+    
 
     
     <%= javascript_include_tag "application" %>
