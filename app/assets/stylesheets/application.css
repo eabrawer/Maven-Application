@@ -10,6 +10,7 @@
  *
  *= require '_html5reset-1.6.1'
  *= require_self
+ *= require foundation_and_overrides
  *= require_tree .
  */
 
