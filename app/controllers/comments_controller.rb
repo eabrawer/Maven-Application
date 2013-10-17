@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
 	before_filter :load_project
 
   def create
-  	@comment = current_user.comments.build(comment_params)
+  	@comment = current_user.comments.build(params[:comment])
   	# @project = Project.find(params[:id])
   	@comment.project_id = @project.id
   	if @comment.save then
@@ -19,9 +19,9 @@ class CommentsController < ApplicationController
 	  redirect_to @project
   end 
 
-  def comment_params
-  	params.require(:comment).permit(:text)
-  end
+  # def comment_params
+  # 	params.require(:comment).permit(:text)
+  # end
 
   def load_project
     @project = Project.find(params[:project_id])
