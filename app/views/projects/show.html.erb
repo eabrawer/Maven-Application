@@ -44,7 +44,7 @@
 	<%= form_for ProjectUser.new(:project_id => @project.id) do |f| %>
 		<%= f.hidden_field :project_id %>
 		<%= f.collection_select :user_id, User.all, :id, :email %>
-		<%= f.submit "Add", :class => "button"%>
+		<%= f.submit "Add" %>
 	<% end %>
 <% end %>
 </div>

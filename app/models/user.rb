@@ -5,11 +5,16 @@ class User < ActiveRecord::Base
   # has_secure_password
 
 
-  validates :email, uniqueness: true, presence: true
+  validates :email, uniqueness: true, presence: true, :format =>
+  {:with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i}
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :password, confirmation: true
-  
+  validates :password, presence: true, length: {
+    minimum: 7
+  }
+
+
   has_many :projects
   has_many :project_users
   has_many :comments

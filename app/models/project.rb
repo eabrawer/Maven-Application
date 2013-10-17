@@ -2,6 +2,7 @@ class Project < ActiveRecord::Base
 	attr_accessible :title, :essay, :avatar, :tag_list, :authorized_users_attributes
 	
 	validates :title, presence: true
+	validates :avatar, presence: true
 	validates :essay, presence: true, length: { 
 				minimum: 1
 			}
