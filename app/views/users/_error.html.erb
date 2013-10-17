@@ -1,12 +1,22 @@
 <%= form_for @user do |form| %>
 	<% if @user.errors.any? %>
-		<%= pluralize(@user.errors.count, "error") %>
-		prohibited this from being saved
+	<div class="center">
+	<div class="row">
+	<div class="span6 offset3"
+		<div id="error_explanation">
+			<div class="alert alert-error">
+				<%= pluralize(@user.errors.count, "error") %>    prohibited this form from being saved
+			</div>
+		
 		<ul>
 		<% @user.errors.full_messages.each do |msg| %>
 			<li><%= msg %></li>
 		<% end %>
 		</ul>
+		</div>
+	</div>
+	</div>
+	</div class="center">
 	<% end %>
 <% end %>
 
