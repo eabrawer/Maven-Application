@@ -68,7 +68,10 @@ class ProjectsController < ApplicationController
     value = params[:type] == "up" ? 1 : -1
     @project = Project.find(params[:id])
     @project.add_or_update_evaluation(:votes, value, current_user)
-    redirect_back_or_to :notice => "Thank you for voting!"
+    debugger
+    #redirect_back_or_to :notice => "Thank you for voting!"
+    flash[:notice] = "Thank you for voting!"
+    redirect_to project_path(@project)
   end
 
 

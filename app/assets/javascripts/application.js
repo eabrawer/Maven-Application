@@ -18,8 +18,7 @@
 
 
 $(document).ready(function () {
-	$(".adding_authorized_users").tokenInput("users.json", {
-		crossDomain: false
-	});
+	$("#project_user_user_id").tokenInput("/users.json");
+	//$("#project_user_user_id").tokenInput([{id: 3, name: "test"}, {id: 5, name: "awesome"}]);
 });
 

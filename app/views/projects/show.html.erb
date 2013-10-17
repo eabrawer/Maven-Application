@@ -1,17 +1,12 @@
-<div class="showpage"
-	<p class="showtitle"><%= @project.title %></p>
+<div class="showpage">
+	<div class="showtitle">
+		<p><%= @project.title %></p>
+	</div>
 	<div id="scroll">
 		<p><%= @project.essay %></p>
 	</div>
-
-	
 </div>
 
-      <% if @project.user != nil %>
-        <em> by <%= @project.user.email %></em>
-        Added on: <%= @project.created_at %>
-      <% end %>
-      <br />
 
 <%= pluralize @project.reputation_for(:votes).to_i, "votes" %>
 <%= link_to "up", vote_project_path(@project, type: "up"), method: "post" %>
@@ -44,13 +39,13 @@
 <br />
 <h4>Group members</h4>
 <div class="adding_authorized_users">
-<% if current_user == @project.user %>
-	<%= form_for ProjectUser.new(:project_id => @project.id) do |f| %>
-		<%= f.hidden_field :project_id %>
-		<%= f.collection_select :user_id, User.all, :id, :email %>
-		<%= f.submit "Add" %>
+	<% if current_user == @project.user %>
+		<%= form_for ProjectUser.new(:project_id => @project.id) do |f| %>
+			<%= f.hidden_field :project_id %>
+			<%= f.collection_select :user_id, User.all, :id, :email %>
+			<%= f.submit "Add" %>
+		<% end %>
 	<% end %>
-<% end %>
 </div>
 
 
