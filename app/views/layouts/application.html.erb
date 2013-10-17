@@ -13,18 +13,29 @@
   <body>
     <%= render "shared/nav" %>
     <div id="page-container">
-      <div class="flash">
-        <% if flash[:notice] %>
-           <p><%= flash[:notice] %></p>
-        <% end %>
-        
-        <% if flash[:alert] %>
-           <p><%= flash[:alert] %></p>
-        <% end %>
+      <% if current_page? root_path %>
+        <div id="background">
+        <div id="bgcontainer">
+        </div>
+        <div id="appintro">
+          <h1>Share your knowledge with the world<h1>
+        </div>
       </div>
+      <% end %>
+      <div class="container">
+        <div class="flash">
+          <% if flash[:notice] %>
+             <p><%= flash[:notice] %></p>
+          <% end %>
+          
+          <% if flash[:alert] %>
+             <p><%= flash[:alert] %></p>
+          <% end %>
+        </div>
 
-      <%= yield %>
+        <%= yield %>
     
+      </div>
     </div>
     <%= javascript_include_tag "application" %>
   </body>
