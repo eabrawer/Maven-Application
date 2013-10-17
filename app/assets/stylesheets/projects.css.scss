@@ -31,3 +31,27 @@
   .m { font-size: 1.2em; }
   .l { font-size: 1.8em; }
 }
+
+#background {
+
+	width: 100%;
+	height: 1000px;
+}
+
+#bgcontainer {
+	background-image:url('/assets/Story4.jpg');
+	background-repeat: no-repeat;
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#appintro {
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	color: white;
+	position: relative;
+	bottom: 50%;
+	text-align: center;
+}
