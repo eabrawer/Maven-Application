@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
 
   after_save :populate_name
 
-  def populate_name!
+  def populate_name
     # TODO: take first and last name and save it into new "name" column
     # Make sure attr accessibles are set too !
     combo_name = first_name + " " + last_name
