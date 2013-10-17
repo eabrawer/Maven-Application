@@ -1,7 +1,10 @@
-<img src=<%= @project.avatar_url(:big_thumb) %>>
-<p><%= @project.title %></p>
-<div id="scroll">
-	<p><%= @project.essay %></p>
+<div class="showpage"
+	<p class="showtitle"><%= @project.title %></p>
+	<div id="scroll">
+		<p><%= @project.essay %></p>
+	</div>
+
+	
 </div>
 
       <% if @project.user != nil %>

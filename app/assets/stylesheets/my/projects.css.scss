@@ -4,9 +4,28 @@
 
 #scroll {
 	background-color: white;
-	width: 500px;
+	border: 1px solid rgba(0, 0, 0, 0.25);
+	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25);
 	height: 300px;
-	border: 1px solid black;
-	box-shadow: 0 0 1px 1px;
+	margin: 0 auto;
 	overflow: scroll;
+	width: 500px;
 }
+
+
+.showpage {
+	width: 100%;
+/*	position: relative;
+    top: 40%;
+    left: 40%;*/
+    margin: 0 auto;
+}
+
+
+.showtitle {
+    margin: 0 auto;
+}
+
+
+
+

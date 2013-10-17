@@ -1,16 +1,25 @@
-
-
-
-
-<% if params[:user_id] then %>
-	<h1><%= current_user.first_name + " #{current_user.last_name}" + "'s Project List" %></h1>
+<div id="projects-list">
 	<% @projects.each do |project| %>
-  		<%= link_to project.title, project %><br />
+	<!-- <div class="project"> -->
+		<div class="project row">
+			<div class="project-image span3">
+				<img src=<%= project.avatar_url(:thumb) %>>
+			</div>
+			<div class="project-info span8">
+				<div class="row">
+					<div class="project-title span12"><h2><%= link_to project.title, project %><h2></div>
+				</div>
+				<div class="row">
+					<div class="project-author span12"><p>By: <%= link_to project.user.email, project %><p></div>
+				</div>
+				<div class="row">
+					<div class="project-tags span12"><p>Tags: <%= raw project.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></p></div>
+				</div>
+			</div>
+		</div>
+	<!-- </div> -->
 	<% end %>
-<% else %>
-	<h1> Your Projects </h1>
-	<% @projects.each do |project| %>
-		<img src=<%= project.avatar_url(:thumb) %>><br />
-  		<%= link_to project.title, project %>
-	<% end %>
-<% end %>
+</div>
+
+
+
