@@ -11,16 +11,14 @@
 	<br />
 
 	<div class="userinfo">
-		<h1 class="username"><%= @user.first_name + " #{@user.last_name}" + "'s Profile" %></h1>
+		<div class="username">
+			<h4><%= @user.first_name + " #{@user.last_name}" + "'s Profile" %></h4>
+			<p>Created at <%= @user.created_at %></p>
+		</div>
 		
 		<br />
 
-
-		<div class="createdat">
-			<%= @user.created_at %>
-		</div>
-
-		<div class= "reputation">
+		<div class="reputation">
 			<% if current_user %>
 				<h3><%= current_user.reputation_for(:votes).to_i %></h3><p>REPUTATION</p>
 			<% end %>

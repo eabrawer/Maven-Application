@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131015201334) do
+ActiveRecord::Schema.define(:version => 20131017193404) do
 
   create_table "comments", :force => true do |t|
     t.text     "text"
@@ -108,6 +108,7 @@ ActiveRecord::Schema.define(:version => 20131015201334) do
     t.datetime "updated_at",                   :null => false
     t.string   "remember_me_token"
     t.datetime "remember_me_token_expires_at"
+    t.string   "name"
   end
 
   add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"

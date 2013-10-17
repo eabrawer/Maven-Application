@@ -19,7 +19,6 @@
 
 
 
-
 #userblock {
 	width: 435px;
 	height: 400px;
@@ -51,17 +50,19 @@
 
 .userinfo {
 	float: right;
-	position: relative;
-	bottom: 20px;
+	margin: -10px 0 0 0;
 }
 
 .username {
 	float: left;
 	font-size: 18px;
 	font-family: tahoma, sans-serif;
-	letter-spacing: -1px;
-	text-align: center;
 
+	text-align: center;
+	p {
+	
+		font-size: 12px;
+	}
 }
 
 .reputation {
@@ -92,7 +93,7 @@
 	}
 }
 
-.createdat {
-	position: relative;
+.created_at {
+	/*position: relative;*/
 	font-size: 10px;
 }
