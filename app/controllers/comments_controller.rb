@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
   	if @comment.save then
   		redirect_to @project, :notice => "Comment was successfully created."
   	else
-      	flash.now[:alert] = "Comment was not created"
+      flash.now[:alert] = "Comment was not created"
   		render "new"
   	end
   end
