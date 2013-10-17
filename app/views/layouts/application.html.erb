@@ -12,23 +12,20 @@
 
   <body>
     <%= render "shared/nav" %>
-
-    <div class="flash">
-      <% if flash[:notice] %>
-         <p><%= flash[:notice] %></p>
-      <% end %>
-      
-      <% if flash[:alert] %>
-         <p><%= flash[:alert] %></p>
-      <% end %>
-    </div>
-
-    <div class="row">
-      <div class="large-12 columns">
-        <%= yield %>
+    <div id="page-container">
+      <div class="flash">
+        <% if flash[:notice] %>
+           <p><%= flash[:notice] %></p>
+        <% end %>
+        
+        <% if flash[:alert] %>
+           <p><%= flash[:alert] %></p>
+        <% end %>
       </div>
-    </div>
+
+      <%= yield %>
     
+    </div>
     <%= javascript_include_tag "application" %>
   </body>
 
