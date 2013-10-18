@@ -19,8 +19,15 @@ class User < ActiveRecord::Base
   has_many :project_users
   has_many :comments
   mount_uploader :avatar, UserAvatarUploader
-  has_reputation :votes, :source => {:reputation => :votes, 
-  :of => :projects && :comments}, :aggregated_by => :sum 
+  has_reputation :users_votes, 
+        :source => [
+          {:reputation => :votes, :of => :projects },
+          {:reputation => :votes, :of => :comments }
+        ]
+
+
+
+  && :comments}, :aggregated_by => :sum 
 
   after_save :populate_name
 
