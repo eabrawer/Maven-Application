@@ -1,8 +1,7 @@
 <div class="center">
   
   <h3>New Project</h3>
-
-
+  <br />
   <%= form_for @project, :html => {:multipart => true} do |p| %>
       <% if @project.errors.any? %>
          <%= pluralize(@project.errors.count, "error") %> prohibited this review from being saved:
@@ -13,23 +12,27 @@
           </ul>
       <% end %>
 
-    <div class="field">
-      <%= p.label :title %>
-      <%= p.text_field :title %>
-    </div>
-    <div class="field">
-      <%= p.label "Upload Picture" %>
-      <%= p.file_field :avatar %>
-    </div>
-    <br />
-    <div class="field">
-      <%= p.label :essay %>
-      <%= p.text_area :essay %>
-    </div> 
-    <div class="field">
-      <%= p.label :tag_list, "Tags (separated by commas)" %>
-      <%= p.text_field :tag_list %>
-    </div> 
+     <div class="field">
+        <%= p.label :title %>
+        <%= p.text_field :title %>
+        <div class="float"><%= p.label :tag_list, "Tags (separated by commas)" %>
+        <%= p.text_field :tag_list %>
+        </div>
+     </div>
+
+      <div class="field_essay">
+        <%= p.label :essay %>
+        <%= p.text_area :essay %>
+      </div> 
+
+      <div class="field">
+
+      </div>
+
+      <div class="field">
+         <%= p.label "Upload Picture" %>
+         <%= p.file_field :avatar %>
+      </div>
 
     <%= p.submit "save" %>
   <% end %>

@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+gitclass User < ActiveRecord::Base
   authenticates_with_sorcery!
   attr_accessible :email, :first_name, :last_name, 
   :password, :password_confirmation, :avatar
