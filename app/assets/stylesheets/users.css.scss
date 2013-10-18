@@ -92,3 +92,38 @@
 .created_at {
 	font-size: 10px;
 }
+
+.something {
+	float: right;
+	padding: 10px 15px 10px 15px;
+/*	width: 445px;
+	height: 500px;
+	margin: 0 auto;*/
+	bottom: 195px;
+	position: relative;
+/*	top: 50px;*/
+	background-color: white;
+	border-collapse: 1px;
+	border: 1px solid rgba(0,0,0,0.25);
+}
+
+.groupmember {
+	padding: 10px 15px 10px 15px;
+	float: left;
+	background-color: white;
+	border-collapse: 1px;
+	border: 1px solid rgba(0,0,0,0.25);
+
+	p {
+	font-size: 15px;
+	color: rgba(0,0,0,0.50);
+	margin: 0;
+	}
+}
+
+p.smallername {
+	font-size: 10px;
+
+}
+
+
