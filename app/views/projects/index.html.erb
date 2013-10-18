@@ -3,15 +3,22 @@
 		<div class="project-image span3">
 			<img src=<%= project.avatar_url(:thumb) %>>
 		</div>
+
 		<div class="project-info span9">
 			<div class="row">
-				<div class="project-title span12"><h2><%= link_to project.title, project %><h2></div>
+				<div class="project-title span12">
+					<h2><%= link_to project.title, project %><h2>
+				</div>
 			</div>
 			<div class="row">
-				<div class="project-author span12"><p>By: <%= link_to project.user.first_name + " #{project.user.last_name}", project %><p></div>
+				<div class="project-author span12">
+					<p>By: <%= link_to project.user.first_name + " #{project.user.last_name}", project %></p>
+				</div>
 			</div>
 			<div class="row">
-				<div class="project-tags span12"><p>Tags: <%= raw project.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></p></div>
+				<div class="project-tags span12">
+					<p>Tags: <%= raw project.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -20,14 +27,5 @@
 <div id="paginate">
 	<%= will_paginate @projects %>
 </div>
-
-<!-- <div id="tag-cloud">
-	<h2>Tags</h2>
-  <% tag_cloud Project.tag_counts, %w[s m l] do |tag, css_class| %>
-    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-  <% end %>
-</div> -->
-
-
 
 

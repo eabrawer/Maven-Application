@@ -11,23 +11,10 @@ class SessionsController < ApplicationController
       flash.now.alert = "Email or password was invalid"
       render "new"
     end  	
-
-
-   #  user = User.find_by_email(params[:email])
-  	# if user && user.authenticate(params[:password])
-  	# 	session[:user_id] = user.id
-  	# 	redirect_to user, :notice => "You are loged in"
-  	# else
-  	# 	flash.now[:alert] = "You are not logged in"
-  	# 	render "new"
-  	# end
   end
 
   def destroy
     logout
     redirect_to projects_path, :notice => "Logged out!"
-
-  	# session[:user_id] = nil
-  	# redirect_to projects_url, :notice => "Logged out!"
   end
 end
