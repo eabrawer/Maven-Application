@@ -7,36 +7,54 @@
 	</div>
 </div>
 
-	<%= pluralize @project.reputation_for(:votes).to_i, "votes" %>
-	<%= link_to "up", vote_project_path(@project, type: "up"), method: "post" %>
-	<%= link_to "down", vote_project_path(@project, type: "down"), method: "post" %>
-<br />
-<br />
-	<% if can? :update, @project%>
-		<%= link_to "Edit Project", edit_project_path %>
-	<% end %>
-	<% if can? :delete, @project%>
-	<%= link_to "Delete Project", @project, :confirm => "Are you sure you want to delete this user?", :method => :delete %>
-	<% end %>
+<div class="projectoptions">
+	<div class="votes">
+		<%= pluralize @project.reputation_for(:votes).to_i, "votes" %>
+		<%= link_to image_tag("/assets/up.png"), vote_project_path(@project, type: "up"), method: "post" %>
+		<%= link_to image_tag("/assets/down.png"), vote_project_path(@project, type: "down"), method: "post" %>
+	</div>
+
+	<div class="btn btn_default" id="project-btn">
+		<% if can? :update, @project%>
+			<%= link_to "Edit Project", edit_project_path %>
+		<% end %>
+	</div>
+	<div class="btn btn_default" id="project-btn">
+		<% if can? :delete, @project%>
+		<%= link_to "Delete Project", @project, :confirm => "Are you sure you want to delete this user?", :method => :delete %>
+		<% end %>
+	</div>
+</div>
+
+<div style="clear:both;"></div>
+<div class="post-comments">
+	<%= render :partial => "commentform" %>
+</div>
+
+
 
 <% @project.comments.each do |comment| %>
 	<% unless comment.new_record? %>
-		<%= comment.text %>
+<div class="comment-container">
+	<div class="comment-bg">
+		<%= comment.text %><br />
+		<p><%= " - " + comment.user.name %></p>
+	</div>
+	<div class="votes">
 		<%= pluralize comment.reputation_for(:votes).to_i, "votes" %>
-		<%= link_to "up", vote_project_comment_path(@project, comment, type: "up"), method: "post" %>
-		<%= link_to "down", vote_project_comment_path(@project, comment, type: "down"), method: "post" %>		
+		<%= link_to image_tag("/assets/up.png"), vote_project_comment_path(@project, comment, type: "up"), method: "post" %>
+		<%= link_to image_tag("/assets/down.png"), vote_project_comment_path(@project, comment, type: "down"), method: "post" %>	
 		<%= link_to " - Delete", "/projects/#{@project.id}/comments/#{comment.id}", :confirm => "Are you sure you want to delete this comment?", :method => :delete %><br />
 	<% end %>
+	</div>	
+</div>
 <% end %>
 
-<%= render :partial => "commentform" %>
 
 
-<br />
-<br />
 
 
-<br />
+<div class="groups">
 <h4>Group members</h4>
 <div class="adding_authorized_users">
 	<% if current_user == @project.user %>
@@ -46,6 +64,7 @@
 			<%= f.submit "Add" %>
 		<% end %>
 	<% end %>
+</div>
 </div>
 
 
