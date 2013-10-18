@@ -1,4 +1,4 @@
-gitclass User < ActiveRecord::Base
+class User < ActiveRecord::Base
   authenticates_with_sorcery!
   attr_accessible :email, :first_name, :last_name, 
   :password, :password_confirmation, :avatar
@@ -19,15 +19,12 @@ gitclass User < ActiveRecord::Base
   has_many :project_users
   has_many :comments
   mount_uploader :avatar, UserAvatarUploader
-  has_reputation :users_votes, 
+  has_reputation :users_votes, {
         :source => [
           {:reputation => :votes, :of => :projects },
           {:reputation => :votes, :of => :comments }
-        ]
-
-
-
-  && :comments}, :aggregated_by => :sum 
+        ],
+  :aggregated_by => :sum}
 
   after_save :populate_name
 
