@@ -67,19 +67,22 @@
 	width: 500px;
 	height: 100px;
 	border-radius: 4px;
-	overflow: scroll;
+	overflow-y: auto;
+	overflow-x: hidden;
 	p {
+		position: relative;
+		top: 60px;
 		float: right;
 	}
 
 }
 
 .comment-container {
-	width: 800px;
+	width: 700px;
 	height: 200px;
 	margin: 0 auto;
 	position: relative;
-	left: 133px;
+	left: 85px;
 	overflow: scroll;
 }
 

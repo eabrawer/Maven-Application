@@ -29,17 +29,5 @@
 	</div>
 </div>
 
-<div class="something">
-	<h4> Your are a member of </h4>
-		
-			<% @user.project_users.each do |p| %>
-			<div class="groupmember">
-				<p><%= link_to p.project.title %></p>
-				<p class="smallername">by <%= link_to p.project.user.name %></p>
-			</div>	
-			<% end %>
-
-</div>
-	
 
 

@@ -2,29 +2,33 @@
 
 <% if current_user %>
 
-  <h4>Post a Comment!</h4>
+
 
   <%= form_for([@project, @comment]) do |f| %>
-    <% if @comment.errors.any? %>
-      <div id="error_explanation">
-        <div class="alert alert-error">
-         <%= pluralize(@comment.errors.count, "error") %> prohibited this review from being saved:
+    <h4>Give Input!</h4>
+      <% if @comment.errors.any? %>
+        <div id="error_explanation">
+          <div class="alert alert-error">
+           <%= pluralize(@comment.errors.count, "error") %> prohibited this review from being saved:
+          </div>
+            <ul>
+            <% @comment.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
         </div>
-          <ul>
-          <% @comment.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-          </ul>
-      </div>
-    <% end %>
+      <% end %>
 
     <div class="post-field">
       <%= f.text_area :text %>
     </div>
 
+    <br />
+
     <div class="actions">
       <%= f.submit %>
     </div>
+
 <% end %>
 
 <% else %>
