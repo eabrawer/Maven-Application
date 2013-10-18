@@ -1,4 +1,15 @@
 <div id="form-container" class="span12">
+  <% if @project.errors.any? %>
+    <div id="error-container">
+      <p><%= pluralize(@project.errors.count, "error") %> prohibited this review from being saved:<p>
+      <ul>
+        <% @project.errors.full_messages.each do |msg| %>
+          <li class="new-project-error"><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="row">
   <%= form_for @project, :html => {:multipart => true} do |p| %>
     <div class="span9">

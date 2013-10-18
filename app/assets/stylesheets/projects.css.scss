@@ -73,3 +73,21 @@
 .field-input {
 	width: 94%;
 }
+
+#error-container {
+	background: red;
+	margin-top: 15px;
+	border-top-right-radius: 0.5em 0.5em;
+	border-bottom-right-radius: 0.5em 0.5em;
+	border-top-left-radius: 0.5em 0.5em;
+	border-bottom-left-radius: 0.5em 0.5em;
+}
+
+#error-container p {
+	padding: 2px 0 0 5px;
+	margin-bottom: 0;
+}
+
+#error-container ul {
+	padding: 0 0 2px 5px;
+}
