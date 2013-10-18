@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   	if @user.update_attributes(params[:user])
   		redirect_to user_path :notice => "User was successfully updated."
   	else
-      flash.now[:alert] = "User was not updated"
+      # flash.now[:alert] = "User was not updated"
   		render "edit"
   	end
   end
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
       auto_login(@user)
   		redirect_to @user, :notice => "User was successfully created."
   	else
-      flash.now[:alert] = "User was not created"
+      # flash.now[:alert] = "User was not created"
   		render "new"
   	end
   end

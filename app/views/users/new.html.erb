@@ -1,10 +1,19 @@
+<% if @user.errors.any? %>
+<div class="flash-container">
+	<p id="flash-error"><%= pluralize(@user.errors.count, "error") %> prohibited this form from being saved:</p>
+	<ul>
+		<% @user.errors.full_messages.each do |msg| %>
+		<li class="flash-error-msg"><%= msg %></li>
+		<% end %>
+	</ul>
+<% end %>
+
 <div class="row">
 	<div class="span4"></div>
 
 	<div class="span4" id="form-container">
 		<h3>Create User</h3>
 
-		<%= render :partial => "error" %>
 		<%= form_for @user, :html => {:multipart => true} do |form| %>
 			<div class="field">
 				<%= form.text_field :first_name, :placeholder => 'Enter your first name' %><br />

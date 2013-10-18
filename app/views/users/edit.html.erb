@@ -1,6 +1,14 @@
-<h1>User Edit</h1>
+<% if @user.errors.any? %>
+<div class="flash-container">
+	<p id="flash-error"><%= pluralize(@user.errors.count, "error") %> prohibited this form from being saved:</p>
+	<ul>
+		<% @user.errors.full_messages.each do |msg| %>
+		<li class="flash-error-msg"><%= msg %></li>
+		<% end %>
+	</ul>
+<% end %>
 
-<%= render :partial => "error" %>
+<h1>User Edit</h1>
 
 <%= form_for @user do |form| %>
 	<div class="field">
