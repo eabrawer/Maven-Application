@@ -1,8 +1,4 @@
 
-<div class="buttons">
-	<%= link_to "Edit", edit_user_path %>
-</div>
-<div style="clear:both;"></div>
 
 
 <div id="userblock">
@@ -27,10 +23,16 @@
 		<div class= "essaycount">
 			<h3><%= current_user.projects.count %></h3><p>ESSAYS</p>
 		</div>
+
+  		<div style="clear:both;"></div>
+
+		<div class="btn btn_default" id="user-edit-btn">
+			<%= link_to "Edit", edit_user_path %>
+		</div>
 	</div>
-  <div style="clear:both;"></div>
+
 
 </div>
-
+	
 
 
