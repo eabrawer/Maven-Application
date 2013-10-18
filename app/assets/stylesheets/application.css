@@ -12,7 +12,3 @@
  *= require "styles/token-input"
  *= require_tree .
 */
-
-body {
-		background-image:url('/assets/brickwall.png');
-}

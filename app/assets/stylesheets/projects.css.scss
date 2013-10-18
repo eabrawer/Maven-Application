@@ -18,8 +18,6 @@
 	border-bottom-left-radius: 0.5em 0.5em;
 }
 
-
-
 .project {
 	background: #f4f4f4;  
   margin-bottom: 6px;
@@ -55,34 +53,23 @@
 	width: inherit;
 }
 
-#tag-cloud {
-  width: 400px;
-  line-height: 1.6em;
-  .s { font-size: 0.8em; }
-  .m { font-size: 1.2em; }
-  .l { font-size: 1.8em; }
+#form-container {
+	margin: 0 auto;
 }
 
-#background {
-	width: 100%;
-	height: 1000px;
+#essay-container textarea {
+	width: 95%;
+	resize: none;
 }
 
-#bgcontainer {
-	background-image: url('/assets/Story4.jpg');
-	background-repeat: no-repeat;
-	z-index: 0;
-	width: 100%;
-	height: 100%;
+#btn-container {
+	margin-top: 190px;
 }
 
-#appintro {
-	width: 100%;
-	height: 100%;
-	z-index: 1;
-	color: white;
-	position: relative;
-	bottom: 50%;
-	text-align: center;
-	font-family: helvetica, sans-serif;
+#form-container .field {
+	margin-top: 15px;
+}
+
+.field-input {
+	width: 94%;
 }

@@ -13,27 +13,6 @@
     text-align: center;
 }
 
-.field {
-    width: 500px;
-    margin: 0 auto;
-}
-
-.field_essay {
-    width: 500px;
-    margin: 0 auto;
-}
-
-
-.float {
-	float: right;
-	position: relative;
-	bottom: 25px;
-}
-
-#project_essay {
-	width: 493px;
-}
-
 #userblock {
 	width: 435px;
 	height: 204px;
@@ -47,7 +26,6 @@
 	
 }
 
-
 .userpicture {
 /*	margin-top: 20px;*/
 	background-color: white;
@@ -56,13 +34,10 @@
 	margin-bottom: 20px;
 }
 
-
 .info {
 	border: 1px solid black;
 
 }
-
-
 
 .userinfo {
 	float: right;
@@ -110,6 +85,5 @@
 }
 
 .created_at {
-	/*position: relative;*/
 	font-size: 10px;
 }
