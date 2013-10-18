@@ -6,10 +6,12 @@
 	background-color: white;
 	border: 1px solid rgba(0, 0, 0, 0.25);
 	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25);
-	height: 300px;
+	height: 500px;
 	margin: 0 auto;
 	overflow: scroll;
 	width: 500px;
+	padding: 10px 20px 10px 20px;
+	text-align: justify;
 }
 
 
@@ -22,7 +24,72 @@
 .showtitle {
 	width: 100%;
 	text-align: center;
+	font-size: 25px;
+	margin-top: 20px;
 }
+
+.projectoptions {
+	margin: 0 auto;
+	width: 563px;
+}
+
+.votes {
+	float: left;
+
+	margin: 4px 0 0 10px;
+	img {
+		width: 40px;
+		height: 40px;		
+	}
+}
+
+#project-btn {
+	float: right;
+	margin: 10px;
+}
+
+.post-comments {
+	width: 535px;
+	margin: 0 auto;
+}
+
+#comment_text {
+	width: 400px;
+	margin: 0 auto;
+	height: 30px;
+}
+
+.comment-bg {
+	float: left;
+	background: white;
+	padding: 20px;
+/*	margin-left: 22%;*/
+	width: 500px;
+	height: 100px;
+	border-radius: 4px;
+	overflow: scroll;
+	p {
+		float: right;
+	}
+
+}
+
+.comment-container {
+	width: 800px;
+	height: 200px;
+	margin: 0 auto;
+	position: relative;
+	left: 133px;
+	overflow: scroll;
+}
+
+
+.groups {
+	width: 535px;
+	margin: 0 auto;
+}
+
+
 
 
 
