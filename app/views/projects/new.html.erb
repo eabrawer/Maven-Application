@@ -1,10 +1,10 @@
 <div id="form-container" class="span12">
   <% if @project.errors.any? %>
-    <div id="error-container">
-      <p><%= pluralize(@project.errors.count, "error") %> prohibited this review from being saved:<p>
+    <div class="flash-container">
+      <p id="flash-error"><%= pluralize(@project.errors.count, "error") %> prohibited this review from being saved:<p>
       <ul>
         <% @project.errors.full_messages.each do |msg| %>
-          <li class="new-project-error"><%= msg %></li>
+          <li class="flash-error-msg"><%= msg %></li>
         <% end %>
       </ul>
     </div>
