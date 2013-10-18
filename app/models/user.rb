@@ -19,16 +19,15 @@ class User < ActiveRecord::Base
   has_many :project_users
   has_many :comments
   mount_uploader :avatar, UserAvatarUploader
-  has_reputation :users_votes, {
-        :source => [
-          {:reputation => :votes, :of => :projects },
-          {:reputation => :votes, :of => :comments }
-        ],
-  :aggregated_by => :sum}
+  has_reputation :users_votes, 
+    :source => [
+      { :reputation => :votes, :of => :projects },
+      { :reputation => :votes, :of => :comments }
+    ]
 
   after_save :populate_name
 
-  def populate_name!
+  def populate_name
     # TODO: take first and last name and save it into new "name" column
     # Make sure attr accessibles are set too !
     combo_name = first_name + " " + last_name

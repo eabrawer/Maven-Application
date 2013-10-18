@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-  	@users = User.select("id, name").where("first_name like ? or last_name like ?", "%#{params[:q]}%", "%#{params[:q]}%")
+  	@users = User.select("id, name").where("name like ?", "%#{params[:q]}%")
     respond_to do |format|
       format.json { render :json => @users.map(&:attributes) }
     end

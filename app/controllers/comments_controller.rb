@@ -2,7 +2,8 @@ class CommentsController < ApplicationController
 	before_filter :load_project
 
   def create
-  	@comment = current_user.comments.build(comment_params)
+  	@comment = current_user.comments.build(params[:comment])
+  	# @project = Project.find(params[:id])
   	@comment.project_id = @project.id
   	if @comment.save
   		redirect_to @project, :notice => "Comment was successfully created."

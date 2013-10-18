@@ -25,8 +25,8 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-  	@project = current_user.projects.find(params[:id])
-    authorize! if can? :update, @article
+  	@project = Project.find(params[:id])
+    return unless can? :update, @project
   end
 
   def update

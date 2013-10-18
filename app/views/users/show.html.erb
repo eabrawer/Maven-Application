@@ -20,12 +20,12 @@
 
 		<div class="reputation">
 			<% if current_user %>
-				<h3><%= current_user.reputation_for(:votes).to_i %></h3><p>REPUTATION</p>
+				<h3><%= current_user.reputation_for(:users_votes).to_i %></h3><p>REPUTATION</p>
 			<% end %>
 		</div>
 
 		<div class= "essaycount">
-			<h3><%= @projects.to_i %></h3><p>ESSAYS</p>
+			<h3><%= current_user.projects.count %></h3><p>ESSAYS</p>
 		</div>
 	</div>
   <div style="clear:both;"></div>

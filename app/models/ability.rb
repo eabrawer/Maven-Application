@@ -10,10 +10,10 @@ class Ability
       can :delete, Project do |project|
       	project.user == user
       end
-      can :invite, User do |fff|
-        fff == authorized_users
+      # can :invite, User do |fff|
+      #   fff == authorized_users
      
-      end
+      # end
 
     #   if user.admin?
     #     can :manage, :all
