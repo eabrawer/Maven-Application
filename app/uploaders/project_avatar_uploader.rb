@@ -33,7 +33,7 @@ class ProjectAvatarUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process :resize_to_fill => [200, 160]
+    process :resize_to_fill => [210, 210]
   end
 
   version :big_thumb do
