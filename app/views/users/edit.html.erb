@@ -1,35 +1,43 @@
-<h1>User Edit</h1>
-
-<%= render :partial => "error" %>
-
-<%= form_for @user do |form| %>
-	<div class="field">
-		<%= form.label :first_name %><br />
-		<%= form.text_field :first_name %><br />
-	</div>
-	<div class="field">
-		<%= form.label :last_name %><br />
-		<%= form.text_field :last_name %>
-	</div>
-	<div class="field">
-		<%= form.label :email %><br />
-		<%= form.text_field :email %>
-	</div>
-	<div class="field">
-		<%= form.label "Upload Picture" %><br />
-		<%= form.file_field :avatar %>
-	</div>	
-	<div class="field">
-		<%= form.label :password %><br />
-		<%= form.password_field :password %>
-	</div>	
-	<div class="field">
-		<%= form.label :password_confirmation %><br />
-		<%= form.password_field :password_confirmation %>
-	</div>
-	<div class="field">
-		<%= form.submit "save" %>
-	</div>
+<% if @user.errors.any? %>
+<div class="flash-container">
+	<p id="flash-error"><%= pluralize(@user.errors.count, "error") %> prohibited this form from being saved:</p>
+	<ul>
+		<% @user.errors.full_messages.each do |msg| %>
+		<li class="flash-error-msg"><%= msg %></li>
+		<% end %>
+	</ul>
 <% end %>
 
-<%= link_to "Back", user_path %>
+<div class="row">
+	<div class="span4"></div>
+
+	<div class="span4" id="form-container">
+		<h3>Edit User</h3>
+
+		<%= form_for @user, :html => {:multipart => true} do |form| %>
+			<div class="field">
+				<%= form.text_field :first_name %>
+			</div>
+			<div class="field">
+				<%= form.text_field :last_name %>
+			</div>
+			<div class="field">
+				<%= form.text_field :email %>
+			</div>	
+			<div class="field">
+				<%= form.file_field :avatar %>
+			</div>	
+			<div class="field">
+				<%= form.password_field :password %>
+			</div>	
+			<div class="field">
+				<%= form.password_field :password_confirmation %>
+			</div>
+			<div class="action">
+				<%= form.submit "save", :class => "btn btn-default" %>
+			</div>
+		<% end %>
+	</div>
+	
+	<div class="span4"></div>
+</div>
