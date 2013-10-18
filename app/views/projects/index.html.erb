@@ -1,4 +1,7 @@
+<p>&nbsp;</p>
+
 <% @projects.each do |project| %>
+<div class="center"
 	<div class="project row">
 		<div class="project-image span3">
 			<img src=<%= project.avatar_url(:thumb) %>>
@@ -27,6 +30,8 @@
 			</div>
 		</div>
 	</div>
+</div>
+<p>&nbsp;</p>
 <% end %>
 
 <div id="paginate">

@@ -3,7 +3,7 @@
 
 <div id="userblock">
 
-	<img class="userpicture" src=<%= @user.avatar_url(:thumb) %>>
+	<%= image_tag @user.avatar_url(:thumb), :class => "userpicture" if @user.avatar? %>
 	<br />
 
 	<div class="userinfo">
@@ -30,9 +30,32 @@
 			<%= link_to "Edit", edit_user_path %>
 		</div>
 	</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 
+<div>
+
+	<% @user.project_users.each do |p| %>
+	<p><%= p.project.title %></p>
+	<% end %>
+</div>
 
 </div>
+
 	
 
 
