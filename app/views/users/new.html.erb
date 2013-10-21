@@ -25,13 +25,14 @@
 				<%= form.text_field :email, :placeholder => 'Enter your email' %>
 			</div>	
 			<div class="field">
+				<%= form.label :Picture %>
 				<%= form.file_field :avatar %>
 			</div>	
 			<div class="field">
 				<%= form.password_field :password, :placeholder => 'Enter your password' %>
 			</div>	
 			<div class="field">
-				<%= form.password_field :password_confirmation, :placeholder => 'Enter confirmation' %>
+				<%= form.password_field :password_confirmation, :placeholder => 'Repeat Password' %>
 			</div>
 			<div class="action">
 				<%= form.submit "save", :class => "btn btn-default" %>

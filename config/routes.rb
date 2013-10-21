@@ -6,7 +6,7 @@ Letsmeet::Application.routes.draw do
   resources :sessions, :only => [:new, :create, :destroy]
   resources :users
   # , :except => [:index]
-  resources :project_users, :only => [:create, :destroy]
+  resources :project_users, :only => [:create]
 
   resources :projects do
   	member { post :vote }

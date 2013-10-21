@@ -1,3 +1,5 @@
+<h1> My Projects </h1>
+
 <div id="projects-list">
 	<% @projects.each do |project| %>
 	<!-- <div class="project"> -->
@@ -15,6 +17,11 @@
 				<div class="row">
 					<div class="project-tags span12"><p>Tags: <%= raw project.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></p></div>
 				</div>
+				<div class="row">
+				<div class="project-snipit span12">
+					<p><%= project.essay[0..150] %>...</p>
+				</div>
+			</div>
 			</div>
 		</div>
 	<!-- </div> -->

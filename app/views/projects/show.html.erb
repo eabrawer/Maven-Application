@@ -52,25 +52,22 @@
 
 <div class="groups">
 <h4>Group members</h4>
-<div class="adding_authorized_users">
-	<% if current_user == @project.user %>
-		<%= form_for ProjectUser.new(:project_id => @project.id) do |f| %>
-			<%= f.hidden_field :project_id %>
-			<%= f.collection_select :user_id, User.all, :id, :email %>
-			<%= f.submit "Add" %>
+	<div class="adding_authorized_users">
+		<% if current_user == @project.user %>
+			<%= form_for ProjectUser.new(:project_id => @project.id) do |f| %>
+				<%= f.hidden_field :project_id %>
+				<%= f.collection_select :user_id, User.all, :id, :email %>
+				<br />
+				<%= f.submit "Add" %>
+			<% end %>
 		<% end %>
-	<% end %>
-
 
 <% @project.authorized_users.each do |authorized_user| %>
-	<%= authorized_user.first_name %>
-	<%= authorized_user.last_name %>
-	<% if @project.authorized_users.include?(current_user) %>
-		<%= link_to " - Leave", authorized_user, :confirm => "Are you sure you want to leave this group?", :method => :delete %><br />
-	<% elsif @project.user == current_user %>
-		<%= link_to " - Remove Group Member", authorized_user, :confirm => "Are you sure you want to remove #{authorized_user.first_name}", :method => :delete %><br />
-	<% end %>	
-<% end %>
+		<%= authorized_user.first_name %>
+		<%= authorized_user.last_name %>
+		<% end %>
+	</div>
+</div>
 <br />
 <br />
 

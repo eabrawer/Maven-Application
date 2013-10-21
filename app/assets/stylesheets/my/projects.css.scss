@@ -35,7 +35,7 @@
 
 .votes {
 	float: left;
-
+	color: white;
 	margin: 4px 0 0 10px;
 	img {
 		width: 40px;
@@ -49,6 +49,7 @@
 }
 
 .post-comments {
+	color: white;
 	width: 535px;
 	margin: 0 auto;
 }
@@ -90,10 +91,19 @@
 .groups {
 	width: 535px;
 	margin: 0 auto;
+	color: white;
+	a {
+		color: white;
+	}
 }
 
-
-
+#paginate {
+	text-align: center;
+	color: white;
+	a {
+		color: white;
+	}
+}
 
 
 

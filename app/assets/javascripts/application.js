@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-// = require "src/jquery.tokeninput"
+= require "src/jquery.tokeninput"
 //= require_tree .
 
 

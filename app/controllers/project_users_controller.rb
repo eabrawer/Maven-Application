@@ -7,10 +7,10 @@ class ProjectUsersController < ApplicationController
   	end
   end
 
-  def destroy
-  	@project_user = ProjectUser.find(params[:id])
-  	@project_user.destroy
-  	redirect_to @project_user.project
-  end
+  # def destroy
+  # 	@project_user = ProjectUser.find(params[:id])
+  # 	@project_user.destroy
+  # 	redirect_to project_path
+  # end
 
 end

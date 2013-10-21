@@ -3,15 +3,15 @@ class ProjectsController < ApplicationController
 
   def index
     if params[:tag]
-      @projects = Project.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 10)
+      @projects = Project.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 5)
       .find_with_reputation(:votes, :all, :order => "votes desc")
     else
-      @projects = Project.paginate(:page => params[:page], :per_page => 10)
+      @projects = Project.paginate(:page => params[:page], :per_page => 5)
       .find_with_reputation(:votes, :all, :order => "votes desc")
     end
 
     if params[:search]
-      @projects = Project.search(params[:search]).paginate(:page => params[:page], :per_page => 10)
+      @projects = Project.search(params[:search]).paginate(:page => params[:page], :per_page => 5)
       .find_with_reputation(:votes, :all, :order => "votes desc")
     end
   end
